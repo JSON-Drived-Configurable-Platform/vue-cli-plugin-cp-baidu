@@ -1,16 +1,12 @@
-import Vue from "vue";
-import iView from "iview";
-import VueRouter from "vue-router";
+import Vue from 'vue';
+import iView from 'iview';
+import VueRouter from 'vue-router';
 
-import App from "./App.vue";
-import router from "./router";
-import store from "./store";
+import App from './App.vue';
+import router from './router';
+import store from './store';
 
-import "iview/dist/styles/iview.css";
-import "form-generator-iview/src/style/index.less";
-import "data-vis-iview/src/style/index.less";
-import FormGenerator from "form-generator-iview";
-import DataVis from "data-vis-iview";
+import 'iview/dist/styles/iview.css';
 
 Vue.use(VueRouter);
 Vue.use(iView);
@@ -18,15 +14,11 @@ Vue.use(iView);
 // 开启debug模式
 Vue.config.debug = true;
 
-Vue.use(FormGenerator);
-Vue.use(DataVis);
-Vue.use(FormGenerator);
-Vue.use(DataVis);
 /* eslint-disable */
 new Vue({
   /* eslint-enable */
-  el: "#app",
-  router,
-  store,
-  render: h => h(App)
+    el: '#app',
+    router,
+    store,
+    render: h => h(App)
 });

@@ -1,15 +1,15 @@
-export function computeBreadCrumbList(currentPath = "", menuList = []) {
-  const breadCrumbList = [];
-  menuList.forEach(item => {
-    if (item.submenu) {
-      item.submenu.forEach(subItem => {
-        if (currentPath === subItem.path) {
-          breadCrumbList.push(subItem);
+export function computeBreadCrumbList(currentPath = '', menuList = []) {
+    const breadCrumbList = [];
+    menuList.forEach(item => {
+        if (item.submenu) {
+            item.submenu.forEach(subItem => {
+                if (currentPath === subItem.path) {
+                    breadCrumbList.push(subItem);
+                }
+            });
+        } else if (currentPath === item.path) {
+            breadCrumbList.push(item);
         }
-      });
-    } else if (currentPath === item.path) {
-      breadCrumbList.push(item);
-    }
-  });
-  return breadCrumbList;
+    });
+    return breadCrumbList;
 }

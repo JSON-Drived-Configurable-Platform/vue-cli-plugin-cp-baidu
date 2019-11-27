@@ -1,39 +1,39 @@
 <template>
-  <Header>
-    <Menu mode="horizontal" theme="dark" active-name="1">
-      <div class="layout-logo"></div>
-      <div class="layout-nav">
-        <Submenu name="3">
-          <template slot="title">
-            生态
-          </template>
-          <MenuItem name="3-1">
-            Configurable Plaform
-          </MenuItem>
-          <MenuItem name="3-2">
-            form-generator-iview
-          </MenuItem>
-          <MenuItem name="3-2">
-            data-vis-iview
-          </MenuItem>
-        </Submenu>
-        <MenuItem name="2">
-          <user />
-        </MenuItem>
-      </div>
-    </Menu>
-  </Header>
+    <Header>
+        <Menu mode="horizontal" theme="dark" active-name="1">
+            <div class="layout-logo"></div>
+            <div class="layout-nav">
+                <Submenu name="3">
+                    <template slot="title">
+                        生态
+                    </template>
+                    <MenuItem name="3-1">
+                        Configurable Plaform
+                    </MenuItem>
+                    <MenuItem name="3-2">
+                        form-generator-iview
+                    </MenuItem>
+                    <MenuItem name="3-2">
+                        data-vis-iview
+                    </MenuItem>
+                </Submenu>
+                <MenuItem name="2">
+                    <user />
+                </MenuItem>
+            </div>
+        </Menu>
+    </Header>
 </template>
 
 <script>
-import user from "../user";
+import user from '../user';
 export default {
-  components: {
-    user
-  },
-  data() {
-    return {};
-  }
+    components: {
+        user
+    },
+    data() {
+        return {};
+    }
 };
 </script>
 <style lang="less" scoped>

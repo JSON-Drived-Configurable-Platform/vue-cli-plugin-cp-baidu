@@ -1,45 +1,45 @@
 <template>
-  <div class="page-home">
-    <Carousel v-model="current" loop>
-      <CarouselItem v-for="(item, index) in carouselData" :key="index">
-        <div class="page-home-carousel-content">{{ item }}</div>
-      </CarouselItem>
-    </Carousel>
-    <div class="page-home-hot-templates">
-      <h1 class="page-home-hot-templates-header">Hot Templates</h1>
-      <div class="page-home-hot-templates-cards">
-        <Card
-          v-for="(item, index) in hotTemplates"
-          :key="index"
-          class="page-home-hot-templates-card"
-        >
-          <p slot="title">{{ item.title }}</p>
-          <p>
-            {{ item.description }}
-          </p>
-        </Card>
-      </div>
+    <div class="page-home">
+        <Carousel v-model="current" loop>
+            <CarouselItem v-for="(item, index) in carouselData" :key="index">
+                <div class="page-home-carousel-content">{{ item }}</div>
+            </CarouselItem>
+        </Carousel>
+        <div class="page-home-hot-templates">
+            <h1 class="page-home-hot-templates-header">Hot Templates</h1>
+            <div class="page-home-hot-templates-cards">
+                <Card
+                    v-for="(item, index) in hotTemplates"
+                    :key="index"
+                    class="page-home-hot-templates-card"
+                >
+                    <p slot="title">{{ item.title }}</p>
+                    <p>
+                        {{ item.description }}
+                    </p>
+                </Card>
+            </div>
+        </div>
     </div>
-  </div>
 </template>
 <script>
-import service from "@/service";
-const { getHomeData } = service.home;
+import service from '@/service';
+const {getHomeData} = service.home;
 export default {
-  data() {
-    return {
-      current: 0,
-      carouselData: [],
-      hotTemplates: []
-    };
-  },
-  mounted() {
-    getHomeData().then(res => {
-      const { carouselData, hotTemplates } = res.data;
-      this.carouselData = carouselData;
-      this.hotTemplates = hotTemplates;
-    });
-  }
+    data() {
+        return {
+            current: 0,
+            carouselData: [],
+            hotTemplates: []
+        };
+    },
+    mounted() {
+        getHomeData().then(res => {
+            const {carouselData, hotTemplates} = res.data;
+            this.carouselData = carouselData;
+            this.hotTemplates = hotTemplates;
+        });
+    }
 };
 </script>
 <style lang="less">
