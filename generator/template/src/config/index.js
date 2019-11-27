@@ -5,28 +5,26 @@
  */
 
 const baseUrlMap = {
-  development: "",
-  test: "",
-  production: "/cp-example"
+    development: '',
+    test: '',
+    production: '/cp-example'
 };
 
 export default {
-  /**
+    /**
    * @description 配置显示在浏览器标签的title
    */
-  title: "cp-example",
+    title: 'cp-example',
 
-  /**
+    /**
    * @description api请求基础路径
    */
-  baseUrl: baseUrlMap[process.env.NODE_ENV],
+    baseUrl: baseUrlMap[process.env.NODE_ENV],
 
-  /**
+    /**
    * @description 默认打开的首页的路由name值，默认为home
    */
-  homeName: "home",
+    homeName: 'home',
 
-  defaultOpenNames: "/doc",
-
-  menuList: []
+    defaultOpenNames: '/doc'
 };

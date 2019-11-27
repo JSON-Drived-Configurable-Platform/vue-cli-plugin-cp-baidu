@@ -3,8 +3,8 @@
  * @author wangbing11(wangbing11@baidu.com)
  */
 
-import HttpRequest from "@/libs/axios";
-import config from "@/config";
+import HttpRequest from '@/libs/axios';
+import config from '@/config';
 const baseUrl = config.baseUrl;
 
 const axios = new HttpRequest(baseUrl);
