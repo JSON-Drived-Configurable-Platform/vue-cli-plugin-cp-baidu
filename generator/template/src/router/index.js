@@ -13,10 +13,10 @@ const router = new Router({
 });
 
 const templateToComponent = {
-    'template-curd': () =>
-    import(/* webpackChunkName: "data-report" */ '../template/curd'),
-    'template-data-report': () =>
-    import(/* webpackChunkName: "curd" */ '../template/data-report')
+    // 'template-curd': () =>
+    // import(/* webpackChunkName: "data-report" */ '../template/curd'),
+    // 'template-data-report': () =>
+    // import(/* webpackChunkName: "curd" */ '../template/data-report')
 };
 
 /**
