@@ -1,66 +1,66 @@
 <template>
-  <div class="layout-container">
-    <Layout>
-      <appHeader />
-      <Layout class="layout-body ivu-layout-has-sider">
-        <appSlider
-          :menu-list="menuList"
-          :active-name="pagePath"
-          :open-names="openNames"
-          @on-select="turnToPage"
-        />
-        <Layout class="layout-body-right">
-          <Breadcrumb v-if="breadcrumb.length > 1" :data="breadcrumb" />
-          <Content class="layout-body-right-content">
-            <router-view />
-          </Content>
+    <div class="layout-container">
+        <Layout>
+            <appHeader />
+            <Layout class="layout-body ivu-layout-has-sider">
+                <appSlider
+                    :menu-list="menuList"
+                    :active-name="pagePath"
+                    :open-names="openNames"
+                    @on-select="turnToPage"
+                />
+                <Layout class="layout-body-right">
+                    <Breadcrumb v-if="breadcrumb.length > 1" :data="breadcrumb" />
+                    <Content class="layout-body-right-content">
+                        <router-view />
+                    </Content>
+                </Layout>
+            </Layout>
         </Layout>
-      </Layout>
-    </Layout>
-  </div>
+    </div>
 </template>
 
 <script>
-import appHeader from "./components/header/appHeader";
-import Breadcrumb from "./components/breadcrumb/Breadcrumb";
-import appSlider from "./components/slider/appSlider";
-import config from "../../../config";
-import { computeBreadCrumbList } from "../../../libs/utils";
+import appHeader from './components/header/appHeader';
+import Breadcrumb from './components/breadcrumb/Breadcrumb';
+import appSlider from './components/slider/appSlider';
+import config from '../../../config';
+import {computeBreadCrumbList} from '../../../libs/utils';
 export default {
-  components: {
-    appHeader,
-    Breadcrumb,
-    appSlider
-  },
-  data() {
-    return {};
-  },
-
-  computed: {
-    menuList() {
-      return this.$store.state.app.menuList || [];
+    components: {
+        appHeader,
+        Breadcrumb,
+        appSlider
+    },
+    data() {
+        return {};
     },
 
-    pagePath() {
-      return this.$store.state.page.pagePath || "";
+    computed: {
+        menuList() {
+            return this.$store.state.app.menuList || [];
+        },
+
+        pagePath() {
+            return this.$store.state.page.pagePath || '';
+        },
+
+        breadcrumb() {
+            return computeBreadCrumbList(this.pagePath, this.menuList);
+        },
+
+        openNames() {
+            return config.defaultOpenNames ? [config.defaultOpenNames] : [];
+        }
     },
 
-    breadcrumb() {
-      return computeBreadCrumbList(this.pagePath, this.menuList);
-    },
-
-    openNames() {
-      return config.defaultOpenNames ? [config.defaultOpenNames] : [];
+    methods: {
+        turnToPage(path) {
+            this.$router.push({
+                path
+            });
+        }
     }
-  },
-
-  methods: {
-    turnToPage(path) {
-      this.$router.push({
-        path
-      });
-    }
-  }
 };
 </script>
 <style lang="less" scoped>
