@@ -1,4 +1,6 @@
 import axios from '../libs/api.request';
+const appServices = require('./module/app').default;
+const userServices = require('./module/user').default;
 
 /**
  * @desc gernarate a API service using axios
@@ -21,11 +23,6 @@ function generateService(serviceDeclaration) {
  *
  */
 function getAppServices() {
-    // eslint-disable-next-line global-require
-    const appServices = require('./module/app').default;
-    // eslint-disable-next-line global-require
-    const userServices = require('./module/user').default;
-
     const servicesConfig = {
         ...appServices,
         ...userServices

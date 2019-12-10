@@ -1,6 +1,6 @@
 const getUserInfo = (params = {}) => {
     return {
-        url: '/api/user/user-info',
+        url: 'rbac/user-info',
         method: 'get',
         params
     };

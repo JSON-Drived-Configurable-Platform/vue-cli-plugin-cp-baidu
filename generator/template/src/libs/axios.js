@@ -5,7 +5,6 @@
 
 /* eslint-disable no-param-reassign */
 import axios from 'axios';
-
 class HttpRequest {
     constructor(baseUrl = '/') {
         this.baseUrl = baseUrl;
